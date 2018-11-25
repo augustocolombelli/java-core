@@ -4,7 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class WritingWithFileWriter {
+public class WriterWithFileWriter {
 
 	public static void main(String[] args) throws IOException {
 		FileWriter fileWriter = new FileWriter("files//file-writer-output");
