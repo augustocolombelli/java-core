@@ -45,6 +45,11 @@ public class ConvertingCharsets {
 		newLetter = new String(bytes, "windows-1252");
 		System.out.println("Letter with a different charset: "+ newLetter);
 		
+		
+		String texto = "José, Mário, João";
+		byte[] bytesOfText = texto.getBytes();
+		String newText = new String(bytesOfText, StandardCharsets.UTF_8);
+		System.out.println(newText);
 	}
 
 }
