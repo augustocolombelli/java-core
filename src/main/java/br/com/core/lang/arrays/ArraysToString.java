@@ -1,4 +1,4 @@
-package br.com.core.util.arrays;
+package br.com.core.lang.arrays;
 
 import java.util.Arrays;
 
