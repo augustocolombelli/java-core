@@ -15,7 +15,6 @@ public class TestInLinkedHashset {
 		System.out.println(numbers);
 		numbers.removeIf(new RemoveZeroPredicate());
 		System.out.println(numbers);
-		
 	}
 	
 }
