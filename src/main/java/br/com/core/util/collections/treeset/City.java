@@ -34,5 +34,10 @@ public class City implements Comparable<City> {
 	public int compareTo(City o) {
 		return Integer.compare(this.getId(), o.getId());
 	}
+	
+	@Override
+	public int hashCode() {
+		return this.getId() * this.getName().length() * Integer.MAX_VALUE;
+	}
 
 }

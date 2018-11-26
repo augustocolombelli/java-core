@@ -22,6 +22,18 @@ public class TestsInTreeSet {
 
 		System.out.println("Numbers: " + numbers);
 		System.out.println("Cities: " + cities);
+		
+		City cityA = new City(8, "Curitiba");
+		City cityB = new City(8, "Curitiba");
+		
+		System.out.println("City A is equals City B? "+cityA.equals(cityB));
+		System.out.println("City A and City have same hashcode? "+(cityA.hashCode() == cityB.hashCode()));
+		System.out.println("Hashcode of City A: "+cityA.hashCode());
+		System.out.println("Hashcode of City B: "+cityB.hashCode());
+		System.out.println("City A was added? "+cities.add(cityA));
+		System.out.println("City B was added? "+cities.add(cityB));
+		
+	
 	}
 
 }
