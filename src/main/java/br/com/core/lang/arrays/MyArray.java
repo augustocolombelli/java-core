@@ -46,6 +46,14 @@ public class MyArray<E> implements Iterable<E> {
 			}
 		}
 	}
+	
+	public void remove(int position) {
+		for(int i = position; i < actualIndex - 1; i++) {
+			elements[i] = elements[i+1];
+		}
+		actualIndex--;
+		elements[actualIndex] = null;
+	}
 
 	public String toString() {
 		return Arrays.toString(elements);
@@ -83,6 +91,9 @@ public class MyArray<E> implements Iterable<E> {
 		//strings.add("K", 1);
 		strings.add("K", 1);
 		strings.add("LL", 3);
+		System.out.println(strings.toString());
+		
+		strings.remove(3);
 		System.out.println(strings.toString());
 	}
 
