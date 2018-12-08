@@ -14,18 +14,32 @@ public class MyArray<E> implements Iterable<E> {
 	}
 
 	public void add(E element) {
+		ajustSize();
 		elements[actualIndex] = element;
 		actualIndex++;
 	}
 
 	public void add(E element, int position) {
-		for(int i = actualIndex - 1; i >= position; i--) {
+		ajustSize();
+		for (int i = actualIndex - 1; i >= position; i--) {
 			elements[i + 1] = elements[i];
 		}
 		elements[position] = element;
 		actualIndex++;
 	}
-	
+
+	private void ajustSize() {
+		if(actualIndex == elements.length) {
+			Object[] newArray = new Object[2*elements.length];
+			
+			for(int i =0; i< elements.length; i++) {
+				newArray[i] = elements[i];
+			}
+			
+			elements = newArray;
+		}
+	}
+
 	@SuppressWarnings("unchecked")
 	public E get(int index) {
 		return (E) elements[index];
@@ -46,10 +60,10 @@ public class MyArray<E> implements Iterable<E> {
 			}
 		}
 	}
-	
+
 	public void remove(int position) {
-		for(int i = position; i < actualIndex - 1; i++) {
-			elements[i] = elements[i+1];
+		for (int i = position; i < actualIndex - 1; i++) {
+			elements[i] = elements[i + 1];
 		}
 		actualIndex--;
 		elements[actualIndex] = null;
@@ -70,30 +84,15 @@ public class MyArray<E> implements Iterable<E> {
 		strings.add("A");
 		strings.add("B");
 		strings.add("C");
-
-		System.out.println("Printing with all values...");
-		for (String s : strings) {
-			System.out.println(s);
-		}
-
-		strings.remove("B");
-		strings.remove("A");
-
-		System.out.println("Printing after remove values..");
-		for (String s : strings) {
-			System.out.println(s);
-		}
-
-		System.out.println("Printing after add in a specific position...");
-		strings.add("T");
-		strings.add("Z");
-		System.out.println(strings.toString());
-		//strings.add("K", 1);
-		strings.add("K", 1);
-		strings.add("LL", 3);
-		System.out.println(strings.toString());
+		strings.add("D");
+		strings.add("E");
+		strings.add("F");
+		strings.add("G");
+		strings.add("H");
+		strings.add("I");
+		strings.add("J");
+		strings.add("L");
 		
-		strings.remove(3);
 		System.out.println(strings.toString());
 	}
 
