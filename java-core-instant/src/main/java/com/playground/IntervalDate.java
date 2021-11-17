@@ -6,7 +6,7 @@ import java.time.Instant;
 import java.time.ZoneOffset;
 import java.time.temporal.ChronoUnit;
 
-public class IntervalPlayground {
+public class IntervalDate {
 
     private final static int SECONDS_IN_A_DAY = 86400; // 60 seconds * 60 minutes * 24 hours
     private final static int SECONDS_IN_A_WEEK = SECONDS_IN_A_DAY * 7;
@@ -14,7 +14,7 @@ public class IntervalPlayground {
     private final Instant end;
     private final Instant start;
 
-    public IntervalPlayground(Instant start, Instant end){
+    public IntervalDate(Instant start, Instant end){
         this.start = start;
         this.end = end;
     }
@@ -27,19 +27,19 @@ public class IntervalPlayground {
         return this.end;
     }
 
-    public static IntervalPlayground previousDay(Clock clock) {
+    public static IntervalDate previousDay(Clock clock) {
         Instant start = instantMinusSeconds(clock, SECONDS_IN_A_DAY);
         Instant end = Instant.now(clock);
-        return new IntervalPlayground(start, end);
+        return new IntervalDate(start, end);
     }
 
-    public static IntervalPlayground lastSevenDays(Clock clock){
+    public static IntervalDate lastSevenDays(Clock clock){
         Instant start = instantMinusSeconds(clock, SECONDS_IN_A_WEEK);
         Instant end = Instant.now(clock);
-        return new IntervalPlayground(start, end);
+        return new IntervalDate(start, end);
     }
 
-    public static IntervalPlayground previousWeek(Clock clock) {
+    public static IntervalDate previousWeek(Clock clock) {
         Instant endSunday = clock.instant().truncatedTo(ChronoUnit.DAYS);
 
         while (!DayOfWeek.from(endSunday.atZone(ZoneOffset.UTC)).equals(DayOfWeek.SUNDAY)){
@@ -47,7 +47,7 @@ public class IntervalPlayground {
         }
 
         Instant start = endSunday.minusSeconds(SECONDS_IN_A_WEEK);
-        return new IntervalPlayground(start, endSunday);
+        return new IntervalDate(start, endSunday);
     }
 
     private static Instant instantMinusSeconds(Clock clock, int seconds){

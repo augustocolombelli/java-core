@@ -13,7 +13,7 @@ public class IntervalPlaygroundTest {
     public void shouldReturnPreviousDay(){
         Clock clock = Clock.fixed(Instant.parse("2020-02-20T10:00:00Z"), ZoneOffset.UTC);
 
-        IntervalPlayground interval = IntervalPlayground.previousDay(clock);
+        IntervalDate interval = IntervalDate.previousDay(clock);
 
         Assertions.assertEquals(Instant.parse("2020-02-19T10:00:00Z"), interval.getStart());
         Assertions.assertEquals(Instant.parse("2020-02-20T10:00:00Z"), interval.getEnd());
@@ -23,7 +23,7 @@ public class IntervalPlaygroundTest {
     public void shouldReturnPreviousSevenDays(){
         Clock clock = Clock.fixed(Instant.parse("2020-02-20T10:00:00Z"), ZoneOffset.UTC);
 
-        IntervalPlayground interval = IntervalPlayground.lastSevenDays(clock);
+        IntervalDate interval = IntervalDate.lastSevenDays(clock);
 
         Assertions.assertEquals(Instant.parse("2020-02-13T10:00:00Z"), interval.getStart());
         Assertions.assertEquals(Instant.parse("2020-02-20T10:00:00Z"), interval.getEnd());
@@ -33,7 +33,7 @@ public class IntervalPlaygroundTest {
     public void shouldReturnPreviousWeek(){
         Clock clock = Clock.fixed(Instant.parse("2021-11-17T10:00:00Z"), ZoneOffset.UTC);
 
-        IntervalPlayground interval = IntervalPlayground.previousWeek(clock);
+        IntervalDate interval = IntervalDate.previousWeek(clock);
 
         Assertions.assertEquals(Instant.parse("2021-11-07T00:00:00Z"), interval.getStart());
         Assertions.assertEquals(Instant.parse("2021-11-14T00:00:00Z"), interval.getEnd());
