@@ -29,8 +29,6 @@ public class IntervalInvoiceTest {
                 new IntervalInvoice().getInvoicesLastWeek(clock, invoices);
 
         Assertions.assertEquals(4l, result.size());
-
-
     }
 
 }
