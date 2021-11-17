@@ -1,4 +1,4 @@
-package com.core;
+package com.playground;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

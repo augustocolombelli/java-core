@@ -1,4 +1,4 @@
-package com.core;
+package com.playground;
 
 import java.time.Duration;
 import java.time.Instant;
