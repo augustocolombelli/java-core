@@ -1,4 +1,4 @@
-package com.apitest.controller;
+package com.apitest.controller.product;
 
 
 import org.springframework.http.ResponseEntity;

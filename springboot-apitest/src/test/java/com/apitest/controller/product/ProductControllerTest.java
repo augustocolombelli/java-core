@@ -1,6 +1,7 @@
-package com.apitest.controller;
+package com.apitest.controller.product;
 
 
+import com.apitest.controller.product.ProductController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

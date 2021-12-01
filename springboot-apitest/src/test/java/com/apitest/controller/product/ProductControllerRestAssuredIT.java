@@ -1,4 +1,4 @@
-package com.apitest.controller;
+package com.apitest.controller.product;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;

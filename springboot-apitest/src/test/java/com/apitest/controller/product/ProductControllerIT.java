@@ -1,5 +1,6 @@
-package com.apitest.controller;
+package com.apitest.controller.product;
 
+import com.apitest.controller.product.ProductResponseDTO;
 import com.jayway.jsonpath.DocumentContext;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
